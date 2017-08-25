@@ -1,0 +1,27 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input type="hidden" [(ngModel)]="event.uuid" name="uuid">
+  <select name="family-person"  [ngModel]="event.familyPerson" name="familyPerson" required [compareWith]="byId">
+    <option value="" disabled>お名前（続柄）</option>
+    <option *ngFor="let person of family" [ngValue]="person" >{{person.name}}さん</option>
+  </select>
+  <input type="number" placeholder="年次" [ngModel]="event.year" name="year" required>
+  <input type="text" placeholder="イベント" [ngModel]="event.eventName" name="eventName" required>
+  <input type="number" placeholder="金額"  [ngModel]="event.money" name="money" required><span>万円</span>
+  <button type="submit">変更</button>
+  <button (click)="deleteRow();">削除</button>
+</form>
+
+
+<!--
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input type="hidden" [(ngModel)]="event.uuid" name="uuid">
+  <select name="family-person"  [value]="event.familyPerson" name="familyPerson" required>
+    <option value="" disabled>お名前（続柄）</option>
+    <option *ngFor="let person of family" [value]="person" >{{person.name}}さん</option>
+  </select>
+  <input type="number" placeholder="年次" [value]="event.year" name="year" required>
+  <input type="text" placeholder="イベント" [value]="event.eventName" name="eventName" required>
+  <input type="number" placeholder="金額" [value]="event.money" name="money" required><span>万円</span>
+  <button type="submit">変更</button>
+</form>
+-->

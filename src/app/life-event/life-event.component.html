@@ -1,0 +1,14 @@
+<app-page-header
+    [title]="'今後のライフイベントとかかる費用'"
+    [desc]="'今から20年先までの自分と家族の暮らしをイメージしながら、先々のライフイベントとかかる費用を書き出してみましょう'"
+></app-page-header>
+
+<app-family-alert *ngIf="isEmptyFamily()"></app-family-alert>
+
+<h3>ライフイベントを入力してください。</h3>
+
+<app-life-event-input [family]="family"></app-life-event-input>
+
+<h3>入力されたライフイベント</h3>
+
+<app-life-event-list [family]="family" ></app-life-event-list>

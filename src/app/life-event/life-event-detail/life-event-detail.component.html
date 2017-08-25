@@ -1,0 +1,12 @@
+<div [hidden]="isEdit"  (click)="onClick()">
+  <span class="year">{{event.year}}</span>
+  <span *ngFor="let person of family" class="age">{{ageOfYear(person.birthday, event.year)}}</span>
+  <span class="event">
+    {{event.familyPerson.name}}:
+    {{event.eventName}}
+  </span>
+  <span class="money">{{event.money}}万円</span>
+</div>
+<div [hidden]="!isEdit">
+  <app-life-event-update  [event]="event" [family]="family" (deleteLifeEvent)="deleteEvent()" (submitLifeEvent)="changeEvent()"></app-life-event-update>
+</div>

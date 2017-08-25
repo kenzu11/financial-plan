@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 20px;
+  color:#333;
+  font-size:0.9em;
+}
+
+form {
+  margin: 5px;
+}
+
+input, select, button {
+  font-size: 14px;
+  border: solid 1px #EEEEEE;
+  padding: 10px;
+  border-radius: 0;
+  background-color: #FFFFFF;
+}
+
+input {
+  height: 20px;
+}
+
+input[type=date] {
+  width: 150px;
+}
+
+@media screen and (max-width: 680px) {
+  body {
+    margin: 2px;
+  }
+
+  input[type=date] {
+    width: 120px;
+  }
+}
+
+input[type=text] {
+  width: 180px;
+}
+
+input[type=number] {
+  width: 60px;
+}
+
+select,
+button {
+  height: 42px;
+}
+
+select {
+  -webkit-appearance: none;
+	-moz-appearance: none;
+}

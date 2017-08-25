@@ -1,0 +1,17 @@
+<header>
+  <span class="year">年</span>
+  <span *ngFor="let person of family" class="age">{{person.relationship | relationshipValue}}の年齢</span>
+<!--
+  <span *ngFor="let person of family" class="age">{{person.name}}の年齢</span>
+-->
+  <span class="event">ライフイベント</span>
+  <span class="money">かかるお金</span>
+</header>
+
+<ul>
+  <li *ngFor="let event of events">
+    <app-life-event-detail [event]="event" [family]="family" (deleteLifeEvent)="deleteEventRow($event)"></app-life-event-detail>
+  </li>
+</ul>
+
+

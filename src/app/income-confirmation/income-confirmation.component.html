@@ -1,0 +1,14 @@
+<app-page-header
+  [title]="'年間の収入と支出を書き出そう'"
+  [desc]="'年間収入から年間支出を差し引いてみると、家計が赤字か黒字かわかります'"
+></app-page-header>
+<app-income></app-income>
+<app-expense></app-expense>
+<hr>
+<div class="saving">
+  <div class="title">1年間に貯蓄できる額<div class="radius-white">A</div>-<div class="radius-white">B</div></div>
+  <div class="total">
+    <span>{{calcSaving()}}</span>
+    <span class="unit">万円</span>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input type="hidden" name="id" [(ngModel)]=id >
+
+  <input type="text" name="name" [(ngModel)]=name required placeholder="name">
+  <select name="relationship" [(ngModel)]=relationship required placeholder="relationship">
+    <option *ngFor="let relationship of relationships" value="{{relationship.key}}">
+      {{relationship.value}}
+    </option>
+  </select>
+  <input type="date" name="birthday" [ngModel]=birthdayFormat required placeholder="birthday">
+  <button type=submit [disabled]="!f.form.valid">更新</button>
+</form>
